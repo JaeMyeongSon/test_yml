@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockertestjmjm
+  labels:
+    app: docker-test
+spec:
+  selector:
+    matchLabels:
+      app: docker-test
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: docker-test
+    spec:
+      containers:
+      - name: dockertestjmjm
+        image: dockertestjmjm.azurecr.io/docker-test:631
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8080
+          name: nodejs-port
