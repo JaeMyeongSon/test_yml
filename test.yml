@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dockertestjmjm
+  name: dockertestjmjmjm
   labels:
     app: docker-test
 spec:
